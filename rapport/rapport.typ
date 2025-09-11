@@ -1,7 +1,11 @@
-> 💡 Question 1 : Si l’un des tests échoue à cause d’un bug, comment pytest signale-t-il l’erreur et aide-t-il à la localiser ? Rédigez un test qui provoque volontairement une erreur, puis montrez la sortie du terminal obtenue.
+= Rapport Labo 0 - LOG430 - Louis Thevenet
 
-```
-❯ python3 -m pytest
+== Question 1
+
+_Si l’un des tests échoue à cause d’un bug, comment pytest signale-t-il l’erreur et aide-t-il à la localiser ? Rédigez un test qui provoque volontairement une erreur, puis montrez la sortie du terminal obtenue._
+
+```bash
+$ python3 -m pytest
 ================================================================================= test session starts ==================================================================================
 platform linux -- Python 3.13.6, pytest-8.4.1, pluggy-1.6.0
 rootdir: /home/louis/src/log430-a25-labo0/src
@@ -25,11 +29,12 @@ FAILED tests/test_calculator.py::test_fail - assert 5 == 2
 
 Pytest signale que le test concerné a échoué en précisant la nature de l'échec. Dans cet exemple, `a` est remplacé par sa valeur au moment de l'exécution du test qui est différente de `2`.
 
-> 💡 Question 2 : Que fait GitLab pendant les étapes de « setup » et « checkout » ? Veuillez inclure la sortie du terminal Gitlab CI dans votre réponse.
+== Question 2
+_Que fait GitLab pendant les étapes de « setup » et « checkout » ? Veuillez inclure la sortie du terminal Gitlab CI dans votre réponse. _
 
 Le `checkout` sert à cloner le dépôt Git dans l'environnement de CI et le `setup-python` sert à y installer python.
 
-```
+```bash
 Run actions/checkout@v3
 Syncing repository: louis-thevenet/log430-a25-labo0
 Getting Git version info
@@ -47,7 +52,7 @@ Checking out the ref
 '8347c7e21956c899c710c5f144484b20c09051e3'
 ```
 
-```
+```bash
 Run actions/setup-python@v4
   with:
     python-version: 3.11
@@ -59,7 +64,9 @@ Installed versions
   Successfully set up CPython (3.11.13)
 ```
 
-> 💡 Question 3 : Quelle approche et quelles commandes avez-vous exécutées pour automatiser le déploiement continu de l'application dans la machine virtuelle ? Veuillez inclure les sorties du terminal et les scripts bash dans votre réponse.
+== Question 3
+
+_Quelle approche et quelles commandes avez-vous exécutées pour automatiser le déploiement continu de l'application dans la machine virtuelle ? Veuillez inclure les sorties du terminal et les scripts bash dans votre réponse._
 
 On ne peut pas accéder à la machine virtuelle depuis les GitHub actions à cause du VPN. J'ai créé un script d'installation `./install.sh`.
 Il suffirait de lancer la commande `sudo curl https://raw.githubusercontent.com/louis-thevenet/log430-a25-labo0/refs/heads/main/install.sh | sh` via SSH depuis une GitHub action.
@@ -87,8 +94,11 @@ cd src/
 python3 calculator.py
 ```
 
-> 💡 Question 4 : Quel type d'informations pouvez-vous obtenir via la commande « top » ? Veuillez inclure la sortie du terminal dans votre réponse.
+== Question 4
+
+_Quel type d'informations pouvez-vous obtenir via la commande « top » ? Veuillez inclure la sortie du terminal dans votre réponse._
 
 Le programme top permet d'afficher l'état du système en temps réel, il affiche entre autres la liste des processus en cours d'exécution, des information sur leur propriétaire, PID, ainsi que l'utilisation du CPU et de la mémoire.
 
-![](top.png)
+#image("./top.png")
+
