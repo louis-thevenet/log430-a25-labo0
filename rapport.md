@@ -26,7 +26,8 @@ FAILED tests/test_calculator.py::test_fail - assert 5 == 2
 Pytest signale que le test concerné a échoué en précisant la nature de l'échec. Dans cet exemple, `a` est remplacé par sa valeur au moment de l'exécution du test qui est différente de `2`.
 
 > 💡 Question 2 : Que fait GitLab pendant les étapes de « setup » et « checkout » ? Veuillez inclure la sortie du terminal Gitlab CI dans votre réponse.
-> Le `checkout` sert à cloner le dépôt Git dans l'environnement de CI et le `setup-python` sert à y installer python.
+
+Le `checkout` sert à cloner le dépôt Git dans l'environnement de CI et le `setup-python` sert à y installer python.
 
 ```
 Run actions/checkout@v3
@@ -85,3 +86,9 @@ pip install -r requirements.txt
 cd src/
 python3 calculator.py
 ```
+
+> 💡 Question 4 : Quel type d'informations pouvez-vous obtenir via la commande « top » ? Veuillez inclure la sortie du terminal dans votre réponse.
+
+Le programme top permet d'afficher l'état du système en temps réel, il affiche entre autres la liste des processus en cours d'exécution, des information sur leur propriétaire, PID, ainsi que l'utilisation du CPU et de la mémoire.
+
+![](top.png)
